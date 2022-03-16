@@ -1,6 +1,6 @@
 # GraphPred
-# Step1 get your foorprints via the get_hint_tobias function, and return foorprints to the dir './tobias_footprint_bed/'
-# CMD: python get_hint_tobias --bed bed_name --path current_dir
+#Step1 get your foorprints via the get_hint_tobias function, and return foorprints to the dir './tobias_footprint_bed/'
+#CMD: python get_hint_tobias --bed bed_name --path current_dir
 # Step2 obtain the bed file of foorprints,
 # CMD python get_peaks --bed bed_name --path current_dir
 # Step3 deviding all foorprints into trainig data and testing data,
