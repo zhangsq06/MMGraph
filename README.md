@@ -3,7 +3,7 @@
 CMD: python get_hint_tobias --bed bed_name --path current_dir
 # Step2 obtain the bed file of foorprints,
 CMD python get_peaks --bed bed_name --path current_dir
-# Step3 deviding all foorprints into trainig data and testing data,
+# Step3 obtaining the fasta of trianing data and testing data,and return data to the dir './data/'
 CMD python getchrom_index --bed bed_name --path current_dir --peak_flank 50
 # Step4 obtaining the fasta of trianing data and testing data,and return data to the dir './data/'
-CMD python getchrom_index --bed bed_name --path current_dir --peak_flank 50
+
