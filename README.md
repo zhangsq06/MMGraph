@@ -25,5 +25,5 @@ Arguments --dataset (the name of your data , such as GSE114204)
 ## Step6 predicting TFBSs from ATAC-seq data
 CMD python get_tfbs.py --dataset name 
 Arguments --dataset (the name of your data , such as GSE114204)
-## Step7 predicting TFBSs from ATAC-seq data
-CMD python find_motifs.py --dataset
+## Step7 finding multiple motifs from ATAC-seq data
+CMD python find_motifs.py --dataset name
