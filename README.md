@@ -15,7 +15,7 @@ Arguments --bed (the name of your file) --path(dir that contains the bed file of
 CMD python getchrom_index --bed bed_name --path dir --peak_flank 50
 This CMD need the bed file of footprints as inputs,
 Arguments --bed (the bed file of footprints) --path  (the dir  that includes the fasta of the footprint) --peak_flank (length of sequecnes in fasta file))
-## Step4 generate the generate adjacency matrix
+## Step4 generating adjacency matrixs
 CMD python make_data.py
 This CMD generate the adjacency matrix that contains similarity matrix, coexsiting matrix and inclusive matrix.
 ## Step5 training GraphPred model
