@@ -2,7 +2,7 @@
  GraphPred is a tool based on GNNs and coexisting probability for predicting TFBSs and finding motifs from ATAC-seq data.
  
 ## Dependencies
-Biopython-1.70, tensorflow-1.14.0, [meme-chip](https://meme-suite.org/meme/tools/meme-chip), [HINT](https://www.regulatory-genomics.org/hint/introduction/) and [TOBIAS](https://github.com/loosolab/TOBIAS)
+Python3.6,Biopython-1.70, tensorflow-1.14.0, [meme-chip](https://meme-suite.org/meme/tools/meme-chip), [HINT](https://www.regulatory-genomics.org/hint/introduction/) and [TOBIAS](https://github.com/loosolab/TOBIAS)
 ## Data
 Downloading bed and bam of GSE114204 from [the ENCODE project](https://www.encodeproject.org/).
 ## Step1 Getting your foorprints via the get_hint_tobias function, and return foorprints to the dir './tobias_footprint_bed/'
