@@ -3,7 +3,8 @@
  
 ## Dependencies
 Biopython-1.70, tensorflow-1.14.0, [meme-chip](https://meme-suite.org/meme/tools/meme-chip), [HINT](https://www.regulatory-genomics.org/hint/introduction/) and [TOBIAS](https://github.com/loosolab/TOBIAS)
-
+## Data
+downloading bed and bam of GSE114204 from [the ENCODE project](https://www.encodeproject.org/).
 ## Step1 Getting your foorprints via the get_hint_tobias function, and return foorprints to the dir './tobias_footprint_bed/'
 CMD: python get_hint_tobias --bed bed_name --path current_dir
 Arguments --bed(the name of your file) --path ( current dir which contains hg38.fa GSE*.bed  and GSE*.bam)
