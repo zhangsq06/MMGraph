@@ -1,5 +1,5 @@
 # GraphPred
- GraphPred is a tool based on graph neural network (GNNs) and coexisting probability for predicting TFBSs and finding motifs from ATAC-seq data.
+ GraphPred is a tool based on graph neural network (GNN) and coexisting probability for predicting transcription factor bidning sites (TFBSs) and finding motifs from ATAC-seq data.
  
 ## Dependencies
 Python3.6,Biopython-1.70, tensorflow-1.14.0, [meme-chip](https://meme-suite.org/meme/tools/meme-chip), [HINT](https://www.regulatory-genomics.org/hint/introduction/) and [TOBIAS](https://github.com/loosolab/TOBIAS)
