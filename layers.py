@@ -1,6 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 31 17:46:27 2021
+
+@author: ShuangquanZhang
+"""
 import tensorflow as tf
 from inits import *
-
 def dot(x, y, sparse=False):
 	if sparse:
 		res = tf.sparse_tensor_dense_matmul(x, y)
@@ -94,7 +99,6 @@ class GraphConvolution2():
 		with tf.variable_scope(self.name +'_vars'):
 			self.vars['weights_'+str(0)] = normal(hidden_shape, name='weights_' + str(0))
 			self.vars['weights_'+str(1)] = normal([hidden_dim, output_dim], name='weights_' + str(1))
-			self.vars['weights_'+str(2)] = normal([hidden_dim, hidden_dim], name='weights_' + str(2))
 			if self.bias:
 				self.vars['bias'] = zeros([output_dim], name='bias')
 
@@ -108,13 +112,11 @@ class GraphConvolution2():
 			print("NOT using droput")
 		outputs=[]
 		### transfer the x1,x2 to the same space
-		# trans_m = dot(x2,self.vars['weights_'+str(2)], sparse=False)#1024*800
 		pre_sup = tf.matmul(x1, self.vars['weights_'+str(0)], b_is_sparse=False)#1996*1024
 		
-		pre_sup = dot(pre_sup, x2,sparse=False)#1996*800
+		pre_sup = dot(pre_sup, x2,sparse=False)#
 		output = dot(pre_sup,self.vars['weights_'+str(1)],sparse=False)
 		outputs.append(output)
-		
 		if self.bias:
 			outputs+=self.vars['bias']
 		return self.act(outputs)
