@@ -4,7 +4,7 @@
 
 ## Dependencies
 
-Python3.6,Biopython-1.70, tensorflow-1.14.0, [meme-chip](https://meme-suite.org/meme/tools/meme-chip), [HINT](https://www.regulatory-genomics.org/hint/introduction/) and [TOBIAS](https://github.com/loosolab/TOBIAS)
+Python3.6,Biopython-1.70, tensorflow-1.14.0, [HINT](https://www.regulatory-genomics.org/hint/introduction/) and [TOBIAS](https://github.com/loosolab/TOBIAS)
 
 ## Data
 
