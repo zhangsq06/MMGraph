@@ -12,6 +12,7 @@ import os
 from com_mi import calc_MI, cal_IC
 import sys
 import argparse
+import math
 ################
 parser = argparse.ArgumentParser(description="Process ATAC-seq data.")
 parser.add_argument('--dataset', default='GSE114204_encode',type=str,help='The prefix name of the dataset')
@@ -21,7 +22,6 @@ args = parser.parse_args()
 def construct_vocab(seqs, size, thresh = 0):
     word_vocab = {}
     word_freq = {}
-    n_sqs = len(seqs)
     for i, seq in enumerate(seqs):
         subseqs = [seq[i:i+size] for i in range(0, len(seq) - size + 1, 1)]
         word_vocab[seq]=subseqs
@@ -87,13 +87,13 @@ def Acoo(seqs,word_freq,word_vocab,threshholds=0):
     return Acoo
 ################load k-mer and sequence#############################
 def generateAdjs(tfids,Kmers=5):
-    test_seqs = load_encode_test(tfid)
-    train_seqs = load_encode_train(tfid)
+    test_seqs = load_encode_test(tfids)
+    train_seqs = load_encode_train(tfids)
     seqs = train_seqs + test_seqs
     seqs = [seq[0] for seq in seqs]
     pos_seqs = [t[0] for t in test_seqs]
     
-    motif_seqs = load_motif_seq(tfid)
+    motif_seqs = load_motif_seq(tfids)
     neg_seqs = [t for t in pos_seqs if t not in motif_seqs ] 
 
     word_vocab,word_freq = construct_vocab(seqs, size=Kmers)
@@ -153,17 +153,17 @@ def TFBSs(tfid, Kmers):
                 kmer_embeding = kmers_data[seq_mers[j]] ## k-mer embedding
                 nmi = calc_MI(seq_embeding, kmer_embeding) ##MI1(p,i)
                 if nmi > vals: ###if MI1(p,i)>mean(MI0)
-                    end_frag = int(j+Kmers)
-                    start_frag = int(j-Kmers)
-                    max_index = int(j)
-                    if end_frag < 101 and start_frag>0:
-                        end_frag_index = all_kmers.index(motif_seqs[i][max_index:end_frag]) #kr(p,i)
-                        start_frag_index = all_kmers.index(motif_seqs[i][start_frag:max_index]) #kl(p,i)
-                        coexisting_proba = adj_coo[start_frag_index, end_frag_index] ##coexisting probability of kl(p,i) and kr(p,i)
+                    cp_index = int(j+math.ceil((Kmers-1)/2)) #startkp
+                    right_frag = int(cp_index+Kmers)
+                    left_frag = int(cp_index-Kmers+1)                   
+                    if right_frag < 101 and left_frag>0:
+                        kr_index = all_kmers.index(motif_seqs[i][cp_index+1:right_frag]) #kr(p,i)
+                        kl_index = all_kmers.index(motif_seqs[i][left_frag:cp_index]) #kl(p,i)
+                        coexisting_proba = adj_coo[kl_index, kr_index] ##coexisting probability of kl(p,i) and kr(p,i)
                         if coexisting_proba > 0.5:
-                            seq = motif_seqs[i][start_frag-1:end_frag+1]
+                            seq = motif_seqs[i][left_frag:right_frag]
                             file1.writelines(seq+'\n')
-                            strs='>'+'seq'+'_'+str(i)+'_'+str(start_frag)+'_'+str(end_frag)+'\n'
+                            strs='>'+'seq'+'_'+str(i)+'_'+str(left_frag)+'_'+str(right_frag)+'\n'
                             file2.writelines(strs)
                             file2.writelines(seq+'\n')
                             count += 1
