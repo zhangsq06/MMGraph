@@ -4,7 +4,7 @@ Created on Tue Aug 31 17:46:27 2021
 
 @author: ShuangquanZhang
 """
-
+#calculating the information content of each base
 from scipy.stats import chi2_contingency
 import numpy as np
 from Bio.SubsMat import FreqTable
@@ -20,7 +20,7 @@ def calc_MI(x, y, bins=10):
 
 
 def cal_IC(path_motifInstance):
-    
+####background frequency    
     EXPECT_FREQ = {"A": 0.25, 
                 "G": 0.25, 
                 "T": 0.25, 
