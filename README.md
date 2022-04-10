@@ -42,3 +42,7 @@ Arguments --dataset (the name of your data , such as GSE114204)
 
 CMD python locate_tfbs.py --dataset name
 Arguments --dataset (the name of your data , such as GSE114204)
+
+# Step7 Merging TFBSs
+
+CMD python merge_tfbs.py --dataset name
