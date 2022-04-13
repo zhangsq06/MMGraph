@@ -16,7 +16,7 @@ This CMD needs the bed file of hg38.fa .bed  and .bam as inputs and outputs the 
 Arguments --bed (the prefix name of your file. For example, if your input files are GSE11420x.bed and GSE11420x.bam, you only need to input GSE11420x) --path (the dir contains hg38.fa, GSE11420x.bed and GSE11420x.bam)
 
 
-# 2 Constructing the heterogeneous graph, training a GNN model and finding mutiple motifs
+# 2 Constructing the heterogeneous graph, training a GNN model and finding mutiple motifs.
 ## 2.1 Constructing the heterogeneous graph.
 Obtaining fixed 101 length of sequences by the bedtools v2.21.0, which is used to construct the heterogeneous graph.
 CMD python get_S.py --bed GSE11420x --peak_flank 50
@@ -32,7 +32,7 @@ Arguments --dataset (the name of sequence data, such as GSE11420x_encode) --k (t
 CMD python train.py --dataset GSE11420x_encode --k 5
 This CMD trains a three-layer of GNN model on the GSE11420x_encodeGSE11420 dataset and save the embedding of nodes in './TFBSs/'.
 
-## 2.3 Finding mutiple motifs
+## 2.3 Finding mutiple motifs.
 We calcualtes the mutual information between the embedding of k-mer nodes and embedding of sequence nodes, and find multiple candidate TFBSs by the coexsiting probability between k-mer nodes.
 CMD python find_tfbs.py --dataset GSE11420x_encode
 This CMD needs the embeding of k-mers and sequences as inputs and outputs candidate TFBSs in ./test_data/motifs/GSE11420x_encode_*_.fa.
