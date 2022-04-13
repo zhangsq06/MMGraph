@@ -11,6 +11,7 @@ Putting the *.bed, *.bam, and hg38.fa into the dir 'test_data'.
 # A simple tutorial 
 ## 1. Detecting foorprints via the TOBIAS and Hint-ATAC tools.
 CMD: python detect_footprints.py --bed GSE11420x
+
 This CMD needs the bed file of hg38.fa .bed  and .bam as inputs and outputs the foorprints in the file './test_data/tobias_top1500_bed/top1500GSE11420x.bed'.
 Arguments --bed (the prefix name of your file. For example, if your input files are GSE11420x.bed and GSE11420x.bam, you only need to input GSE11420x) --path (the dir contains hg38.fa, GSE11420x.bed and GSE11420x.bam)
 
