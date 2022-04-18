@@ -1,2 +1,2 @@
 # MMGraph
- GraphPred is a multiple motif predictor based on graph neural network and coexisting probability for ATAC-seq data.
+ MMGraph is a multiple motif predictor based on graph neural network and coexisting probability for ATAC-seq data.
