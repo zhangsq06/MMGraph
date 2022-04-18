@@ -1,7 +1,7 @@
 # MMGraph
  MMGraph is a multiple motif predictor based on graph neural network and coexisting probability for ATAC-seq data.
 # Dependencies
-Python3.6, Biopython-1.70, tensorflow-1.14.0, [bedtools v2.21.0] (https://bedtools.readthedocs.io/en/latest/content/installation.html), [HINT](https://www.regulatory-genomics.org/hint/introduction/) and [TOBIAS](https://github.com/loosolab/TOBIAS).
+Python3.6, Biopython-1.70, tensorflow-1.14.0, [bedtools v2.21.0](https://bedtools.readthedocs.io/en/latest/content/installation.html), [HINT](https://www.regulatory-genomics.org/hint/introduction/) and [TOBIAS](https://github.com/loosolab/TOBIAS).
 
 # Data
 GSE11420x: (290M) (https://drive.google.com/drive/folders/1KehQzVDcBE00wWdYcaq3P4LEAVHBK3ni?usp=sharing) 
