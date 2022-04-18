@@ -1,2 +1,2 @@
-# GraphPred
- GraphPred is a tool to find multiple ATAC-seq motifs using graph neural network (GNN) and coexisting probability.
+# MMGraph
+ GraphPred is a multiple motif predictor based on graph neural network and coexisting probability for ATAC-seq data.
