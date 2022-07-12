@@ -14,9 +14,7 @@ Put *.bed, *.bam, and hg38.fa into the dir 'test_data'.
 __Usage:__ python detect_footprints.py --bed [prefix name]  
 Arguments:   
 --bed (the prefix name of your file).  
-
 For example, if your input files are GSE11420x.bed and GSE11420x.bam, you only need to input GSE11420x)  
-
  Example:  
 > python detect_footprints.py --bed GSE11420x  
 
@@ -26,7 +24,6 @@ Explain: The bed file of hg38.fa .bed  and .bam are required as inputs and outpu
 ## 2.1 Constructing the heterogeneous graph (m=1024,n=3000).
 Obtaining fixed 101 length of sequences (S) by the bedtools v2.21.0, which is used to construct the heterogeneous graph.  
 __Usage:__ python get_S.py --bed [footprints file] --peak_flank [number]  
-
 Arguments:  
 --bed (footprints file, such as GSE11420x)  
 --path  (the dir that includes the footprints and hg38.fa)  
@@ -60,7 +57,6 @@ We calcualtes the mutual information between the embedding of k-mer nodes and em
 __Usage:__ python find_multiple_tfbs.py --dataset [name]  
 Arguments:   
 --dataset (the name of sequence data, such as GSE11420x_encode)  
-
 Example:
 > python find_multiple_tfbs.py --dataset GSE11420x_encode  
 
