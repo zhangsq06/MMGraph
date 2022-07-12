@@ -11,7 +11,7 @@ Put *.bed, *.bam, and hg38.fa into the dir 'test_data'.
 
 # A simple tutorial 
 ## 1. Detecting foorprints via the TOBIAS and Hint-ATAC tools.
-Usage: python detect_footprints.py --bed [prefix name]  
+__Usage:__ python detect_footprints.py --bed [prefix name]  
 Arguments:   
 --bed (the prefix name of your file).  
 
@@ -24,8 +24,8 @@ Explain: The bed file of hg38.fa .bed  and .bam are required as inputs and outpu
 
 # 2 Constructing the heterogeneous graph, training a GNN model and finding mutiple motifs
 ## 2.1 Constructing the heterogeneous graph (m=1024,n=3000).
-Obtaining fixed 101 length of sequences (S) by the bedtools v2.21.0, which is used to construct the heterogeneous graph.
-Usage: python get_S.py --bed [footprints file] --peak_flank [number]  
+Obtaining fixed 101 length of sequences (S) by the bedtools v2.21.0, which is used to construct the heterogeneous graph.  
+__Usage:__ python get_S.py --bed [footprints file] --peak_flank [number]  
 
 Arguments:  
 --bed (footprints file, such as GSE11420x)  
@@ -38,7 +38,7 @@ Example:
 Explain: The bed file of footprints is required as inputs, and output DNA sequences are in './data/encode_101'.
 
 Calculates three types of edges (similarity edges, coexsiting edges and inclusive edges) to construct the heterogeneous graph, where sequences and k-mers are nodes.  
-Usage: python construct_graph.py --dataset [name] --k [k-mer]  
+__Usage:__ python construct_graph.py --dataset [name] --k [k-mer]  
 Arguments:   
 --dataset (the name of sequence data, such as GSE11420x_encode)   
 --k (the length of k-mer, default:k=5)
@@ -46,7 +46,7 @@ Example:
 >  python construct_graph.py --dataset GSE11420x_encode --k 5
 
 ## 2.2 Building and training a three-layer of GNN model to learn the embedding of nodes and identify whether a sequence contains TFBSs. 
-Usage: python train.py --dataset [name]--k [k-mer]  
+__Usage:__ python train.py --dataset [name]--k [k-mer]  
 Arguments:   
 --dataset (the name of sequence data, such as GSE11420x_encode)  
 --k (the length of k-mer, default:k=5)  
@@ -57,7 +57,7 @@ Explain: This step trains a three-layer of GNN model on the GSE11420x_encodeGSE1
 
 ## 2.3 Finding mutiple motifs with different lengths
 We calcualtes the mutual information between the embedding of k-mer nodes and embedding of sequence nodes, and find multiple candidate TFBSs by the coexsiting probability between k-mer nodes.  
-Usage: python find_multiple_tfbs.py --dataset [name]  
+__Usage:__ python find_multiple_tfbs.py --dataset [name]  
 Arguments:   
 --dataset (the name of sequence data, such as GSE11420x_encode)  
 
