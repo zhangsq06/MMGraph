@@ -10,12 +10,12 @@ hg38.fa: (3.05GB) (https://hgdownload.cse.ucsc.edu/goldenpath/hg38/bigZips/)
 Put *.bed, *.bam, and hg38.fa into the dir 'test_data'.
 
 # A simple tutorial 
-## 1. Detecting foorprints via the TOBIAS and Hint-ATAC tools.
+## 1 Detecting foorprints via the TOBIAS and Hint-ATAC tools.
 __Usage:__ python detect_footprints.py --bed [prefix name]  
 Arguments:   
 --bed (the prefix name of your file).  
 
-For example, if your input files are GSE11420x.bed and GSE11420x.bam, you only need to input GSE11420x)  --path (the dir contains hg38.fa, GSE11420x.bed and GSE11420x.bam)  
+For example, if your input files are GSE11420x.bed and GSE11420x.bam, you only need to input GSE11420x)  
 
  Example:  
 > python detect_footprints.py --bed GSE11420x  
