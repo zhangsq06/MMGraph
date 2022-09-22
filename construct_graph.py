@@ -155,6 +155,7 @@ def Acoo(seqs,word_freq,word_vocab):
 def generateAdjs(tfid,Kmers=5):
     test_seqs = load_encode_test(tfid)
     train_seqs = load_encode_train(tfid)
+    ###AC+B
     seqs = train_seqs + test_seqs
     labels = load_labels(seqs)
     seqs = [seq[0] for seq in seqs]
