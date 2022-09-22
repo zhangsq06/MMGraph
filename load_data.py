@@ -15,7 +15,7 @@ def dinucshuffle(sequence):
 def modifystr(str, size=0):
   n = len(str)
   return str[size:n-size]
-############################load training data###############
+############################load training data (AC)###############
 def load_encode_train(tfid, limit=5000,):
 	seq_suffix =".seq"
 	filename = "test_data/data/encode_101/%s_AC%s" % (tfid, seq_suffix)
@@ -40,7 +40,7 @@ def load_encode_train(tfid, limit=5000,):
 			sequences.append([seq, 1])
 			sequences.append([nseq, 0])		
 	return sequences
-###########################load testing data#############
+###########################load testing data (B)#############
 def load_encode_test(tfid):
 	seq_suffix =".seq"
 	filename = "test_data/data/encode_101/%s_B%s" % (tfid, seq_suffix)
