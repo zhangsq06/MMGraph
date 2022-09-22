@@ -3,7 +3,7 @@ import scipy.sparse
 from load_data import load_encode_test, load_encode_train
 import numpy as np
 import time
-import Levenshtein
+from scipy.spatial import distance
 import argparse
 ##########
 parser = argparse.ArgumentParser(description="Process ATAC-seq data.")
@@ -104,7 +104,7 @@ def Asim(seqs,word_freq):
     for i in range(len(keys)):
         for j in range(len(keys)):
             if i<=j:
-                weight=Levenshtein.distance(keys[i], keys[j])
+                weight=distance.hamming(list(keys[i]), list(keys[j]))
                 weights.append(weight)
                 rows.append(i)
                 cols.append(j)
