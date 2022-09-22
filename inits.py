@@ -9,7 +9,7 @@ def normal(shape, name =None):
 	tmp = tf.random_normal(shape, stddev = 0.01)
 	return tf.Variable(tmp, name = name)
 
-def uniform(shape, scale = 0.1, name=None):
+def uniform(shape, scale = 0.0, name=None):
 	tmp = tf.random_uniform(shape, minval =-scale, maxval=scale, dtype=tf.float32)
 	return tf.Variable(tmp, name=name)
 def zeros(shape, name=None):
