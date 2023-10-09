@@ -94,7 +94,7 @@ class GraphConvolution2():
 		x1 = input1
 		x2 = input2#1024*800
 		if self.use_dropout:
-			x = tf.nn.dropout(x1, 1 - self.dropout)
+			x1 = tf.nn.dropout(x1, 1 - self.dropout)
 		outputs=[]
 		### transfer the x1,x2 to the same space
 		# trans_m = dot(x2,self.vars['weights_'+str(22)], sparse=False)#1024*800
