@@ -117,7 +117,6 @@ class dGCN():
 		self.opt_op = self.optimizer.minimize(self.loss)
 	def _loss(self):
 		self.loss = masked_sigmoid_cross_entropy(self.outputs, self.placeholders['labels'], self.placeholders['labels_mask'])
-		self.loss += self.options['weight_decay'] * tf.nn.l2_loss(self.vars['gcn/GCN_vars/weights_22:0'])
 		self.preds = self.outputs
 		self.labels = self.placeholders['labels']
 
