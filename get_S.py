@@ -75,7 +75,7 @@ def get_data(args):
     for i in range(2):
         makeseq(innames[i], outnames[i])
         cmd = 'cat ' + outnames[i] + ' >> ' + outnames[2]
-        os.system(cmd)
+        os.system(cm)
         path_encode = path + 'data/encode_'  + str(args.peak_flank * 2 + 1)
         if not os.path.exists(path_encode):
             os.mkdir(path_encode)
@@ -88,7 +88,7 @@ def get_data(args):
     if not os.path.exists(path_encode):
         os.mkdir(path_encode)
     cmd = 'mv ' + outnames[2] + ' ' + path_encode
-    os.system(cmd)
+    os.system(cm)
     path_txt = path + 'data/encode_tfbs.txt'
     file = open(path_txt, 'a+')
     txxt = name + '_encode' + '\t' + name + '_encode' + '\n'
